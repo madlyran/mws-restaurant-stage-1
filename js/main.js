@@ -3,6 +3,10 @@ let restaurants,
   cuisines
 var map
 var markers = []
+/* register service worker */
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/js/sw.js')
+}
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
