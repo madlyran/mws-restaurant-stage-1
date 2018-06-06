@@ -30,7 +30,7 @@ a img{
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
+  margin: 20px 10px;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -43,8 +43,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
-  letter-spacing: 1px;
-  padding: 25px;
+  letter-spacing: 0.0625em;
+  padding: 1.5em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -214,7 +214,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: calc(50% - 50px);
 }
 #restaurant-name {
   color: #f18200;
