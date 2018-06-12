@@ -1,5 +1,5 @@
 
-var cache_name = 'resteraunt v2';
+var cache_name = 'resteraunt v3';
 var urlsToCache = [
 	'/',
 	'/restaurant.html',
@@ -27,4 +27,14 @@ self.addEventListener('install', function (event) {
 	event.waitUntil(
 		caches.open(cache_name).then(function (cache) {console.log('opened cache'); return cache.addAll(urlsToCache);})
 	);
+});
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+	caches.match(event.request).then(function(response) {
+		if (response) {
+			return response;
+		}
+		return fetch(event.request);
+	})
+  );
 });
