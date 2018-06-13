@@ -5,7 +5,11 @@ var map
 var markers = []
 /* register service worker */
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/js/sw.js')
+	navigator.serviceWorker.register('/js/sw.js').then(function () {
+		console.log("Registration worked!");
+	}).catch(function () {
+		console.log("Registration failed!");
+	});
 }
 
 /**
@@ -147,7 +151,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   li.append(name);
 
